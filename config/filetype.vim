@@ -31,7 +31,7 @@ augroup user_plugin_filetype " {{{
 	" Neovim terminal settings
 	if has('nvim')
 		autocmd TermOpen * setlocal modifiable
-		autocmd TermClose * buffer #
+		" autocmd TermClose * buffer #
 		" autocmd TextYankPost *
 		"	\ silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
 	endif
