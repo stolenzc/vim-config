@@ -467,6 +467,8 @@ if dein#tap('python-mode')
 	let g:pymode_options_colorcolumn = 1
 	" 指定UltiSnips python的docstring风格, sphinx, google, numpy
 	let g:ultisnips_python_style = 'sphinx'
+	" use coc doc
+	let g:pymode_doc = 0
 	" use leader+f auto format pep8 python file
 	autocmd user_events FileType python nnoremap <silent> <Leader>f :<C-u>PymodeLintAuto<CR>
 endif
