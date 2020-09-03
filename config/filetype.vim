@@ -9,13 +9,20 @@ augroup user_plugin_filetype " {{{
 		\ source $MYVIMRC | redraw
 
 	" Highlight current line only on focused window
-	autocmd WinEnter,InsertLeave * if &ft !~# '^\(denite\|clap_\)' |
-		\ set cursorline | endif
-	autocmd WinLeave,InsertEnter * if &ft !~# '^\(denite\|clap_\)' |
-		\ set nocursorline | endif
+	autocmd WinEnter,BufEnter,InsertLeave *
+		\ if ! &cursorline && &filetype !~# '^\(denite\|clap_\)' && ! &pvw
+		\ | setlocal cursorline
+		\ | endif
+	autocmd WinLeave,BufLeave,InsertEnter *
+		\ if &cursorline && &filetype !~# '^\(denite\|clap_\)' && ! &pvw
+		\ | setlocal nocursorline
+		\ | endif
 
 	" Automatically set read-only for files being edited elsewhere
 	autocmd SwapExists * nested let v:swapchoice = 'o'
+
+	" Update diff comparison once leaving insert mode
+	autocmd InsertLeave * if &l:diff | diffupdate | endif
 
 	" Equalize window dimensions when resizing vim window
 	autocmd VimResized * tabdo wincmd =

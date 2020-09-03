@@ -12,6 +12,7 @@ if dein#tap('denite.nvim')
 	xnoremap <silent><LocalLeader>v :<C-u>Denite neoyank -buffer-name=register -default-action=replace<CR>
 	nnoremap <silent><LocalLeader>l :<C-u>Denite location_list -buffer-name=list -no-start-filter<CR>
 	nnoremap <silent><LocalLeader>q :<C-u>Denite quickfix -buffer-name=list -no-start-filter<CR>
+	nnoremap <silent><LocalLeader>m :<C-u>Denite mark<CR>
 	nnoremap <silent><LocalLeader>n :<C-u>Denite dein<CR>
 	nnoremap <silent><LocalLeader>j :<C-u>Denite jump change file/point -no-start-filter<CR>
 	nnoremap <silent><LocalLeader>u :<C-u>Denite junkfile:new junkfile -buffer-name=list<CR>
@@ -20,7 +21,7 @@ if dein#tap('denite.nvim')
 	nnoremap <silent><LocalLeader>t :<C-u>Denite tag<CR>
 	nnoremap <silent><LocalLeader>p :<C-u>Denite jump<CR>
 	nnoremap <silent><LocalLeader>h :<C-u>Denite help<CR>
-	nnoremap <silent><LocalLeader>m :<C-u>Denite file/rec -buffer-name=memo -path=~/docs/blog<CR>
+	nnoremap <silent><LocalLeader>w :<C-u>Denite file/rec -buffer-name=memo -path=~/docs/blog<CR>
 	nnoremap <silent><LocalLeader>z :<C-u>Denite z -buffer-name=list<CR>
 	nnoremap <silent><LocalLeader>; :<C-u>Denite command_history command<CR>
 	nnoremap <silent><expr><LocalLeader>/ wordcount().chars > 10000 ?
@@ -93,14 +94,14 @@ if dein#tap('vim-lsp')
 	" Close preview window with Escape
 	autocmd User lsp_float_opened
 		\ nmap <buffer> <silent> <Esc> <Plug>(lsp-preview-close)
-	autocmd User lsp_float_closed nunmap <buffer> <Esc>
+	autocmd User lsp_float_closed silent! nunmap <buffer> <Esc>
 endif
 
 if dein#tap('defx.nvim')
 	nnoremap <silent> <LocalLeader>e
-		\ :<C-u>Defx -toggle -buffer-name=tab`tabpagenr()`<CR>
+		\ :<C-u>Defx -toggle -buffer-name=explorer`tabpagenr()`<CR>
 	nnoremap <silent> <LocalLeader>a
-		\ :<C-u>Defx -search=`expand('%:p')` -buffer-name=tab`tabpagenr()`<CR>
+		\ :<C-u>Defx -search=`expand('%:p')` -buffer-name=explorer`tabpagenr()`<CR>
 endif
 
 if dein#tap('delimitMate')
@@ -273,8 +274,6 @@ if dein#tap('vim-shot-f')
 	omap F  <Plug>(shot-f-F)
 	omap t  <Plug>(shot-f-t)
 	omap T  <Plug>(shot-f-T)
-	" highlight default ShotFGraph ctermfg=red ctermbg=NONE cterm=bold guifg=red guibg=NONE gui=bold
-	" highlight default ShotFBlank ctermfg=NONE ctermbg=red cterm=bold guifg=NONE guibg=red gui=bold
 endif
 
 if dein#tap('vimwiki')
@@ -299,6 +298,8 @@ if dein#tap('gina.vim')
 	nnoremap <silent> <leader>gl :Gina log --graph --all<CR>
 	nnoremap <silent> <leader>gF :Gina! fetch<CR>
 	nnoremap <silent> <leader>gp :Gina! push<CR>
+	nnoremap <silent> <leader>go :,Gina browse :<CR>
+	vnoremap <silent> <leader>go :Gina browse :<CR>
 endif
 
 if dein#tap('vim-altr')

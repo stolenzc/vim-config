@@ -62,7 +62,7 @@ if has('wildmenu')
 	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
 	set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
 	set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
-	set wildcharm=<C-z>  " substitue for 'wildchar' (<Tab>) in macros
+	" set wildcharm=<C-z>  " substitue for 'wildchar' (<Tab>) in macros
 endif
 
 " }}}
@@ -168,10 +168,12 @@ endif
 
 if executable('rg')
 	set grepformat=%f:%l:%c:%m
-	let &grepprg = 'rg --vimgrep' . (&smartcase ? ' --smart-case' : '') . ' --'
+	let &grepprg =
+		\ 'rg --hidden --vimgrep' . (&smartcase ? ' --smart-case' : '') . ' --'
 elseif executable('ag')
 	set grepformat=%f:%l:%c:%m
-	let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '') . ' --'
+	let &grepprg =
+		\ 'ag --hidden --vimgrep' . (&smartcase ? ' --smart-case' : '') . ' --'
 endif
 
 " }}}
@@ -183,11 +185,14 @@ set breakat=\ \	;:,!?           " Long lines break chars
 set nostartofline               " Cursor in same column for few commands
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 set splitbelow splitright       " Splits open bottom right
-set switchbuf=useopen,vsplit    " Jump to the first open window
+set switchbuf=useopen           " Look for matching window buffers first
 set backspace=indent,eol,start  " Intuitive backspacing in insert mode
 set diffopt=filler,iwhite       " Diff mode: show fillers, ignore whitespace
 set completeopt=menu,menuone    " Always show menu, even for one item
-set completeopt+=noselect       " Do not select a match in the menu
+
+if has('patch-7.4.775')
+	set completeopt+=noselect       " Do not select a match in the menu
+endif
 
 if exists('+completepopup')
 	set completeopt+=popup
@@ -199,7 +204,7 @@ if has('patch-7.4.775')
 	set completeopt+=noinsert
 endif
 
-if has('patch-8.1.0360') || has('nvim-0.4')
+if has('patch-8.1.0360') || has('nvim-0.5')
 	set diffopt+=internal,algorithm:patience
 	" set diffopt=indent-heuristic,algorithm:patience
 endif
@@ -245,8 +250,8 @@ endif
 
 if has('nvim-0.4')
 	set signcolumn=auto:1
-else
-	set signcolumn=auto          " Always show signs column
+elseif exists('&signcolumn')
+	set signcolumn=auto
 endif
 
 " UI Symbols
@@ -266,17 +271,12 @@ if has('patch-7.4.1570')
 	set shortmess+=F
 endif
 
-if has('conceal') && v:version >= 703
-	" For snippet_complete marker
-	set conceallevel=2 concealcursor=niv
-endif
-
-if exists('+previewpopup')
-	set previewpopup=height:10,width:60
-endif
+" if exists('+previewpopup')
+" 	set previewpopup=height:10,width:60
+" endif
 
 " Pseudo-transparency for completion menu and floating windows
-if &termguicolors
+if has('termguicolors') && &termguicolors
 	if exists('&pumblend')
 		set pumblend=10
 	endif
