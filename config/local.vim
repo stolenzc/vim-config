@@ -37,7 +37,8 @@ inoremap <C-j> <C-o>o
 inoremap <C-l> <C-o>A
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
-noremap <leader>b :bd<cr>
+" buffer delete
+" noremap <leader>b :bd<cr>
 
 " omni Completion
 inoremap <C-Space> <C-x><C-o>

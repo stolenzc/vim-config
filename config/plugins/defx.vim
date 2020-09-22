@@ -106,7 +106,7 @@ function! s:defx_mappings() abort
 	nnoremap <silent><buffer><expr> .     defx#do_action('toggle_ignored_files')
 
 	" Defx's buffer management
-	nnoremap <silent><buffer><expr> <Esc>  defx#do_action('quit')
+	" nnoremap <silent><buffer><expr> <Esc>  defx#do_action('quit')
 	nnoremap <silent><buffer><expr> q      defx#do_action('quit')
 	nnoremap <silent><buffer><expr> se     defx#do_action('save_session')
 	nnoremap <silent><buffer><expr> <C-r>  defx#do_action('redraw')
