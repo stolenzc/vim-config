@@ -89,7 +89,7 @@ endfunction
 function! s:defx_mappings() abort
 	" Defx window keyboard mappings
 	setlocal signcolumn=no expandtab
-	setlocal cursorline
+	setlocal cursorline nonu
 
 	nnoremap <silent><buffer><expr> <CR>  <SID>defx_toggle_tree()
 	nnoremap <silent><buffer><expr> e     <SID>defx_toggle_tree()
