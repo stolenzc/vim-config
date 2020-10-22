@@ -525,7 +525,7 @@ endif
 
 if dein#tap('fzf.vim')
 	nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
-	nnoremap <silent> <Leader>bf :Buffers <CR>
+	nnoremap <silent> <Leader>f :Buffers <CR>
 	nnoremap <silent> <c-p> :Files <CR>
 endif
 
