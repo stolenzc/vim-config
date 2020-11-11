@@ -531,4 +531,8 @@ if dein#tap('fzf.vim')
 	nnoremap <silent> <c-p> :Files <CR>
 endif
 
+if dein#tap('vim-json')
+	let g:vim_json_syntax_conceal = 0
+endif
+
 " vim: set ts=2 sw=2 tw=80 noet :
