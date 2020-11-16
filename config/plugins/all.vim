@@ -521,7 +521,7 @@ if dein#tap('vim-go')
 		\ | nmap <Leader>gor  <Plug>(go-run)
 		\ | nmap <Leader>gov  <Plug>(go-vet)
 		\ | nmap <Leader>got  <Plug>(go-test)
-		\ | nmap <Leader>gof  <Plug>(go-test-func)
+		\ | nmap <Leader>gf  <Plug>(go-test-func)
 		\ | nmap fd  <Plug>(go-def-vertical)
 endif
 
