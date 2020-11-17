@@ -24,5 +24,6 @@
         }
     }
   },
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "python.formatting.provider": "black"
 }

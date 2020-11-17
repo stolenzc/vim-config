@@ -504,8 +504,6 @@ if dein#tap('python-mode')
 	let g:ultisnips_python_style = 'sphinx'
 	" use coc doc
 	let g:pymode_doc = 0
-	" use leader+f auto format pep8 python file
-	autocmd user_events FileType python nnoremap <silent> <Leader>f :<C-u>PymodeLintAuto<CR>
 endif
 
 if dein#tap('vim-go')
