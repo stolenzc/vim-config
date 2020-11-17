@@ -73,3 +73,7 @@
     let g:ale_sign_warning = 'ⁱ'
     let g:ale_maximum_file_size = 500000
     let g:ale_linters = {'go': ['golangci-lint']}
+
+#  go get -u github.com/cweill/gotests/...
+- repo: buoto/gotests-vim
+  on_ft: [ go ]
