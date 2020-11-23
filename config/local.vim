@@ -48,3 +48,7 @@ set noautochdir
 set signcolumn=no
 " fix E363: pattern uses more memory than 'maxmempattern'  see: https://github.com/vim/vim/issues/2049
 set mmp=5000
+
+" Disable built-in statusline & tabline
+let g:tabline_plugin_enable = 0
+let g:statusline_plugin_enable = 0
