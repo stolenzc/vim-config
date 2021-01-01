@@ -101,7 +101,7 @@ augroup user_plugin_filetype " {{{
 		\ | setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
 
 	autocmd FileType markdown
-		\ setlocal expandtab spell conceallevel=0
+		\ setlocal expandtab nospell conceallevel=0
 		\ | setlocal autoindent formatoptions=tcroqn2 comments=n:>
 
 	" https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write
