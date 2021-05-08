@@ -16,6 +16,7 @@
 - repo: tpope/vim-surround
 - repo: junegunn/vim-easy-align
 - repo: Valloric/MatchTagAlways
+- repo: voldikss/vim-translator
 
 - repo: Yggdroot/indentLine
   hook_add: |

@@ -531,4 +531,10 @@ if dein#tap('vim-json')
 	let g:vim_json_syntax_conceal = 0
 endif
 
+if dein#tap('vim-translator')
+	" Display translation in a window
+	nmap <silent> <Leader>t <Plug>TranslateW
+	vmap <silent> <Leader>t <Plug>TranslateWV
+endif
+
 " vim: set ts=2 sw=2 tw=80 noet :
