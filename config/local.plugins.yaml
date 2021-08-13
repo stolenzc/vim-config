@@ -3,7 +3,6 @@
 - repo: tpope/vim-repeat
 - repo: jszakmeister/vim-togglecursor
 - repo: mhinz/vim-startify
-- repo: rykka/riv.vim
 - repo: tpope/vim-abolish
 - repo: tpope/vim-projectionist
 - repo: vim-scripts/BufOnly.vim
@@ -15,8 +14,8 @@
 - repo: vim-airline/vim-airline-themes
 - repo: tpope/vim-surround
 - repo: junegunn/vim-easy-align
-- repo: Valloric/MatchTagAlways
 - repo: voldikss/vim-translator
+- { repo: Valloric/MatchTagAlways, on_ft: [html, xhtml, xml, jinja]}
 
 - repo: Yggdroot/indentLine
   hook_add: |
@@ -32,6 +31,7 @@
 - { repo: tenfyzhong/jce-highlight, on_ft: jce}
 
 # pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+- { repo: rykka/riv.vim, on_ft: rst}
 - { repo: Rykka/InstantRst, on_ft: rst}
 - { repo: PegasusWang/RST-Tables, on_ft: rst}
 - { repo: iamcco/mathjax-support-for-mkdp, on_ft: markdown}
@@ -46,7 +46,6 @@
 # cd ~/.cache/vim/dein/repos/github.com; mkdir python-mode
 # git clone --recurse-submodules https://github.com/python-mode/python-mode
 - { repo: python-mode/python-mode, on_ft: python}
-
 
 - repo: easymotion/vim-easymotion
   on_map: { n: <Plug> }
