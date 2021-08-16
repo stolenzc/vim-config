@@ -269,7 +269,7 @@
   on_cmd: FZF
   type__depth: 1
   hook_source: |-
-    let g:fzf_layout = { 'down': '~25%' }
+    let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'border': 'rounded' } }
 
 - repo: junegunn/fzf.vim
   depends: fzf
