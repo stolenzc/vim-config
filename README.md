@@ -1018,3 +1018,5 @@ If you want to use [coc.nvim](https://github.com/neoclide/coc.nvim) for Golang c
 please see this article [《vim as a go ide》](https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/).
 Now you can use `coc` branch for go completion(use gopls). If you use python, type `CocInstall coc-python` install
 python coc plugin.
+
+(注意笔者基于开源配置代码修改，笔者的 leader 是 "," 而不是文档中的 Space)
