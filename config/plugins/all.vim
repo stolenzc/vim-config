@@ -520,6 +520,7 @@ if dein#tap('vim-go')
 		\ | nmap <Leader>ga  <Plug>(go-alternate-edit)
 		\ | nmap <Leader>gf  <Plug>(go-test-func)
 		\ | nmap fd  <Plug>(go-def-vertical)
+	  \ | nnoremap <Leader>r :GoRun % <CR>
 endif
 
 if dein#tap('fzf.vim')
