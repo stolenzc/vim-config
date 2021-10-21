@@ -1,7 +1,7 @@
 " coc.nvim settings
 " ---
 
-let g:coc_global_extensions = ['coc-snippets', 'coc-python', 'coc-json']
+let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-pyright']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
