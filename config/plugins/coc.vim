@@ -44,6 +44,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <Leader>p <Plug>(coc-format)
+nmap <Leader>rn <Plug>(coc-rename)
+nmap <Leader>rf <Plug>(coc-refactor)
 
 nmap gs <Plug>(coc-git-chunkinfo)
 nmap [g <Plug>(coc-git-prevchunk)
