@@ -119,7 +119,7 @@ let g:PHP_removeCRwhenUnix = 0
 " Python {{{
 let g:python_recommended_style = 0
 let g:pydoc_executable = 0
-" let g:python_highlight_all = 1
+let g:python_highlight_all = 1
 " let g:python_highlight_builtins = 1
 " let g:python_highlight_exceptions = 1
 " let g:python_highlight_string_format = 1
