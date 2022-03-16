@@ -39,7 +39,8 @@ noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
 " buffer delete
 noremap <leader>q :bd<cr>
-
+" jump last last edit position
+noremap g<leader> 2g;a
 " omni Completion
 inoremap <C-Space> <C-x><C-o>
 

@@ -9,6 +9,9 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
+" https://github.com/neoclide/coc.nvim/issues/262
+" inoremap <silent><expr> <CR> pumvisible() ? "\<C-y><CR>" : "\<CR>"
+
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! s:check_back_space() abort
