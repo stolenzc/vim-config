@@ -98,7 +98,7 @@ augroup user_plugin_filetype " {{{
 
 	autocmd FileType python
 		\ setlocal expandtab smarttab nosmartindent
-		\ | setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
+		\ | setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=120
 
 	autocmd FileType markdown
 		\ setlocal expandtab nospell conceallevel=0
